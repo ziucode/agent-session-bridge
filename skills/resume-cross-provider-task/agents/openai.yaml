@@ -1,0 +1,4 @@
+interface:
+  display_name: "Resume Cross-Provider Task"
+  short_description: "Resume tasks across Claude Code, Codex, and Cursor"
+  default_prompt: "Use $resume-cross-provider-task to find the selected task from another coding agent, review its context, and continue from the current project state."

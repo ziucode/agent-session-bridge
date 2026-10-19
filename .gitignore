@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.venv/
+.DS_Store
+.env
+.env.*
+!.env.example
+agent_state/
+*.db
+*.db-*
+*.sqlite*
+*.log
+*.jsonl
+!examples/*.jsonl
+context_bridge/
+node_modules/
