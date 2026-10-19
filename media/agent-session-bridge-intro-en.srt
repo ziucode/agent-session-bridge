@@ -1,0 +1,111 @@
+1
+00:00:00,480 --> 00:00:01,830
+You're halfway through a fix.
+
+2
+00:00:02,105 --> 00:00:03,055
+Claude hits a limit.
+
+3
+00:00:03,342 --> 00:00:04,630
+You open Codex…
+
+4
+00:00:04,780 --> 00:00:06,792
+and now you're explaining the whole project again.
+
+5
+00:00:08,071 --> 00:00:10,796
+Agent Session Bridge gives you a better place to start.
+
+6
+00:00:11,096 --> 00:00:15,321
+It's a small, reusable skill for carrying a task between Claude Code,
+
+7
+00:00:15,446 --> 00:00:17,146
+Codex, and Cursor.
+
+8
+00:00:18,429 --> 00:00:19,317
+Here's the idea.
+
+9
+00:00:19,604 --> 00:00:22,804
+You're fixing a to-do app that forgets which items are complete.
+
+10
+00:00:23,104 --> 00:00:27,254
+In Codex, ask: continue my Claude Code task in this project.
+
+11
+00:00:28,517 --> 00:00:32,734
+The skill finds the matching local session and turns the conversation into
+
+12
+00:00:32,754 --> 00:00:34,004
+a readable handoff.
+
+13
+00:00:34,304 --> 00:00:38,259
+It brings forward your request and the previous answer, with a reminder
+
+14
+00:00:38,279 --> 00:00:39,929
+to check what still needs doing.
+
+15
+00:00:41,229 --> 00:00:44,742
+The next agent checks the actual files before continuing.
+
+16
+00:00:45,029 --> 00:00:45,967
+That matters.
+
+17
+00:00:46,254 --> 00:00:49,734
+A conversation can say a bug is fixed when the code still
+
+18
+00:00:49,754 --> 00:00:50,929
+tells a different story.
+
+19
+00:00:52,217 --> 00:00:56,242
+The reader runs locally and leaves your source sessions untouched.
+
+20
+00:00:56,554 --> 00:00:58,179
+Common credentials are redacted.
+
+21
+00:00:58,467 --> 00:01:02,079
+You still review the context before sharing it with the next agent.
+
+22
+00:01:03,317 --> 00:01:05,517
+Cursor command-line transcripts work too.
+
+23
+00:01:05,817 --> 00:01:07,054
+Using the Cursor editor?
+
+24
+00:01:07,329 --> 00:01:09,254
+Import an exported conversation.
+
+25
+00:01:09,567 --> 00:01:10,817
+Then pick up where you left off.
+
+26
+00:01:12,104 --> 00:01:13,479
+Agent Session Bridge.
+
+27
+00:01:13,792 --> 00:01:14,829
+Change tools.
+
+28
+00:01:15,129 --> 00:01:15,854
+Keep the thread.

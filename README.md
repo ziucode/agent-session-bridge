@@ -13,6 +13,14 @@ The `resume-cross-provider-task` skill provides the workflow. A Python
 standard-library script reads supported local transcripts and renders a bounded
 Markdown digest. It does not call model APIs, require API keys, or alter source sessions.
 
+## Introduction video
+
+[**Watch or download the English introduction**](media/agent-session-bridge-intro-en.mp4)
+
+78 seconds · 1080p · American male narration · original abstract interface.
+[English captions](media/agent-session-bridge-intro-en.srt) and
+[production details](media/README.md) are included.
+
 ## Status and platform support
 
 This repository is a private release candidate. Public installation and directory

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Check tracked release contents without reading any provider home directories."""
 from pathlib import Path
+import hashlib
 import re
 import subprocess
 import sys
@@ -15,8 +16,14 @@ REQUIRED = {
     'skills/resume-cross-provider-task/scripts/context_bridge.py',
     'scripts/check_release.py', 'examples/cursor-export.md',
     'tests/test_context_bridge.py', 'tests/test_release_behavior.py',
+    'media/README.md', 'media/agent-session-bridge-intro-en.srt',
+    'media/agent-session-bridge-intro-en.mp4',
 }
 
+
+APPROVED_MEDIA = {
+    'media/agent-session-bridge-intro-en.mp4': '99d0ce086bac57b187c759fbeeb31db3da1dfc151552c4378d4a1d7a3b9fd0b0',
+}
 
 def main():
     if (ROOT / '.git').exists():
@@ -35,6 +42,10 @@ def main():
         if path.is_symlink():
             errors.append(f'symlink not allowed: {name}')
             continue
+        if name in APPROVED_MEDIA:
+            if hashlib.sha256(path.read_bytes()).hexdigest() != APPROVED_MEDIA[name]:
+                errors.append(f'approved media hash mismatch: {name}')
+            continue
         text = path.read_text(encoding='utf-8')
         # No real account home paths or private-key material belongs in the package.
         if re.search(r'/Users/[A-Za-z0-9_.-]+/|/home/[A-Za-z0-9_.-]+/', text):
@@ -48,7 +59,7 @@ def main():
     if errors:
         print('\n'.join(errors), file=sys.stderr)
         return 1
-    print(f'Release hygiene: {len(files)} allowlisted files; no personal paths or credential-shaped literals found.')
+    print(f'Release hygiene: {len(files)} allowlisted files; text scan passed; approved media hashes match.')
     print('This check is not a complete secret detector or a provenance audit.')
     return 0
 
