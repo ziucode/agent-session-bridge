@@ -17,14 +17,10 @@ Markdown digest. It does not call model APIs, require API keys, or alter source 
 
 [**Watch or download the English introduction**](media/agent-session-bridge-intro-en.mp4)
 
-78 seconds · 1080p · American male narration · original abstract interface.
-[English captions](media/agent-session-bridge-intro-en.srt) and
-[production details](media/README.md) are included.
+See how to continue a task after switching coding agents.
+[English captions](media/agent-session-bridge-intro-en.srt) are available.
 
-## Status and platform support
-
-This repository is a private release candidate. Public installation and directory
-discovery become available only after the owner makes it public.
+## Platform support
 
 | Session source | Supported input | Limit |
 | --- | --- | --- |
@@ -38,19 +34,17 @@ other models use the same supported input shapes. Cloud-only sessions and native
 session restoration are outside this release. This is a context handoff, not a
 conversion of hidden model state, permissions, tool execution state, or files.
 
-The Python runtime requirement is **3.10+**. Local tests cover the observed macOS
-transcript shapes. CI is configured for macOS, Linux, and Windows; check actual
-workflow results before treating an OS as validated. No agent account is needed
-to run the synthetic demo or tests.
+Requires **Python 3.10+**. The synthetic test suite runs on macOS, Linux, and
+Windows with Python 3.10 and 3.14. Native transcript formats were observed on
+macOS; compatibility with other product versions can vary. The included example
+and tests run without an agent account.
 
 ## Install the skill
 
-For private access, clone using an account authorized for this repository:
+Install the skill for Claude Code, Codex, and Cursor:
 
 ```bash
-gh repo clone ziucode/agent-session-bridge
-cd agent-session-bridge
-npx skills add . --skill resume-cross-provider-task -a claude-code codex cursor
+npx skills add ziucode/agent-session-bridge --skill resume-cross-provider-task -a claude-code codex cursor
 ```
 
 The Skills CLI requires Node.js. The reader itself only requires Python.
@@ -66,12 +60,6 @@ Review any installer before running it. To install without Node.js, copy the
 Use an empty destination; preserve any existing local version before replacing it.
 Ask the agent to use `resume-cross-provider-task` and identify the source and project.
 Agent-specific skill loading can differ by version or organization policy.
-
-After public release, the short install command will be:
-
-```bash
-npx skills add ziucode/agent-session-bridge --skill resume-cross-provider-task
-```
 
 ## Try a synthetic handoff
 
@@ -163,7 +151,6 @@ for fixture requirements and [SECURITY.md](SECURITY.md) for reporting precaution
 
 ## License and provenance
 
-MIT, copyright Ziu Code. This release derives from the owner's local
-`resume-cross-provider-task` skill and its existing context-bridge tests.
-It includes no vendor source code or real transcripts. Product names identify
-interoperability targets; this project is not affiliated with their vendors.
+[MIT](LICENSE), copyright Ziu Code. This project includes no vendor source code
+or real transcripts. Product names identify interoperability targets; this
+project is not affiliated with their vendors.

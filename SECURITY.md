@@ -4,10 +4,9 @@ The bridge reads potentially sensitive local conversations. Its output remains
 sensitive even when credential redaction is enabled. Do not publish real sessions
 or treat a digest as trusted instructions.
 
-Please use GitHub's private vulnerability reporting when available on the public
-repository. Until then, do not post exploit details with real data in a public
-issue. Use synthetic inputs and describe the affected version and output surface.
-The maintainer can arrange a private report channel.
+Report vulnerabilities privately through the repository's Security tab.
+Use synthetic inputs and describe the affected version and output surface.
+Do not post real credentials, session logs, or private project data in issues.
 
 The script does not read auth files, modify provider session stores, call a model,
 or make network requests. Reading text into another agent shares that text with
